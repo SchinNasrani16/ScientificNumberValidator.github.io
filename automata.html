@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scientific Number Accepter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background-color: #c4e3e7;
+      color: #fb0404;
+
+    }
+    input[type=text] {
+      padding: 5px;
+      font-size: 16px;
+    }
+    button {
+      padding: 5px 10px;
+      font-size: 16px;
+      background-color: #44a5e9;
+      color: #030c01;
+
+      border: none;
+      cursor: pointer;
+    }
+    h1 {
+      color: #220479;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scientific Number Accepter</h1>
+  
+  <p>Enter a scientific number:</p>
+  <input type="text" id="numberInput">
+  <button onclick="checkNumber()">Check</button>
+  <p id="result"></p>
+  <script>
+    function checkNumber() {
+      var input = document.getElementById("numberInput").value;
+      var pattern = /^-?\d+(\.\d+)?([eE][-+]?\d+)?$/;
+      if (pattern.test(input)) {
+        document.getElementById("result").innerHTML = "Yes, it is a scientific number.";
+      } else {
+        document.getElementById("result").innerHTML = "No, it is not a number.";
+      }
+    }
+  </script>
+</body>
+</html>
